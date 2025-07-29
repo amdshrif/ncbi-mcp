@@ -1,0 +1,35 @@
+[project]
+name = "ncbi-mcp"
+version = "0.1.0"
+description = "MCP Server for NCBI E-utilities providing comprehensive access to biological databases"
+readme = "README.md"
+authors = [
+    { name = "Ahmad Shrif", email = "ahmad.shrif@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "mcp>=1.0.0",
+    "click>=8.0.0",
+    "ncbi-client"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0"
+]
+
+[project.scripts]
+ncbi-mcp = "ncbi_mcp.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
